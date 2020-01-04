@@ -65,7 +65,7 @@ def main(args):
         parser.print_help(sys.stderr)
         sys.exit()
 
-    if "read" in args.type:
+    if "READ" in args.type:
 
         try:
 
@@ -80,7 +80,7 @@ def main(args):
 
             print("[!] " + msg)
 
-    elif "write" in args.type:
+    elif "WRITE" in args.type:
 
         try:
 
